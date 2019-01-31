@@ -1,72 +1,81 @@
 @extends('layouts.user')
-@section('title')
-Contact
-@endsection
+
 @section('content')
-<!-- start banner Area -->
-			
-
-			<!-- Start contact-page Area --><br><br>
-			<section class="contact-page-area section-gap">
-
-<h1 class="mb-10 header-text text-center">Contact</h1>
-				<div class="container" style="padding-top: 50px;">
-					<div class="row">
-						<div class="map-wrap" style="width:100%; height: 445px;" id="map"></div>
-						<div class="col-lg-4 d-flex flex-column address-wrap">
-							<div class="single-contact-address d-flex flex-row">
-								<div class="icon">
-									<span class="lnr lnr-home"></span>
-								</div>
-								<div class="contact-details">
-									<h5>Dhaka, Bangladesh</h5>
-									<p>56/8, West Panthapath</p>
-								</div>
-							</div>
-							<div class="single-contact-address d-flex flex-row">
-								<div class="icon">
-									<span class="lnr lnr-phone-handset"></span>
-								</div>
-								<div class="contact-details">
-									<h5>00 (880) 9865 562</h5>
-									<p>Mon to Fri 9am to 6 pm</p>
-								</div>
-							</div>
-							<div class="single-contact-address d-flex flex-row">
-								<div class="icon">
-									<span class="lnr lnr-envelope"></span>
-								</div>
-								<div class="contact-details">
-									<h5>support@codethemes.com</h5>
-									<p>Send us your query anytime!</p>
-								</div>
-							</div>														
-						</div>
+<section id="subscribe">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h2>Contact</h2>
+        </div>
 
 
+      </div>
+    </section>
+<!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact" class="section-bg wow fadeInUp">
 
-						<div class="col-lg-8">
-							<form class="form-area" action="{{url('/admin/contact/save')}}" method="POST" class="contact-form text-right">
-								@csrf
-								<div class="row">	
-									<div class="col-lg-6 form-group">
-										<input name="nama" placeholder="Enter your name" class="common-input mb-20 form-control" required="" type="text">
-									
-										<input name="email" placeholder="Enter email address" class="common-input mb-20 form-control" required="" type="email">
+      <div class="container">
 
-										<input name="subject" placeholder="Enter your subject" class="common-input mb-20 form-control" required="" type="text">
-										<div class="mt-20 alert-msg" style="text-align: left;"></div>
-									</div>
-									<div class="col-lg-6 form-group">
-										<textarea class="common-textarea form-control" name="pesan" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
-										<button type="submit" class="primary-btn mt-20 text-white" style="float: right;">Send Message</button>
-																				
-									</div>
-								</div>
-							</form>	
-						</div>
-					</div>
-				</div>	
-			</section>
+        <div class="section-header">
+       
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address>A108 Adam Street, NY 535022, USA</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@example.com">info@example.com</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="" method="post" role="form" class="contactForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validation"></div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+        </div>
+
+      </div>
+    </section><!-- #contact -->
 			<!-- End contact-page Area -->
 @endsection

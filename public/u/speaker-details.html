@@ -9,22 +9,23 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="{{asset('u/img/favicon.png')}}" rel="icon">
-  <link href="{{asset('u/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="{{asset('u/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-  <link href="{{asset('u/lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
-  <link href="{{asset('u/lib/animate/animate.min.css')}}" rel="stylesheet">
-  <link href="{{asset('u/lib/venobox/venobox.css')}}" rel="stylesheet">
-  <link href="{{asset('u/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/venobox/venobox.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="{{('u/css/style.css')}}" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: TheEvent
@@ -39,36 +40,72 @@
   <!--==========================
     Header
   ============================-->
-  <header id="header">
+  <header id="header" class="header-fixed">
     <div class="container">
 
       <div id="logo" class="pull-left">
         <!-- Uncomment below if you prefer to use a text logo -->
         <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-        <a href="#intro" class="scrollto"><img src="{{asset('u/img/logo.png')}}" alt="" title=""></a>
+        <a href="index.html#intro" class="scrollto"><img src="img/logo.png" alt="" title=""></a>
       </div>
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li ><a href="{{url('/')}}">Home</a></li>
-          <li><a href="{{url('member')}}">Member</a></li>
-          <li><a href="{{url('merchandise')}}">Merchandise</a></li>
-          <li><a href="{{url('berita')}}">Berita</a></li>
-          <li><a href="{{url('contact')}}">Contact</a></li>
+          <li class="menu-active"><a href="#intro">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#speakers">Speakers</a></li>
+          <li><a href="index.html#schedule">Schedule</a></li>
+          <li><a href="index.html#venue">Venue</a></li>
+          <li><a href="index.html#hotels">Hotels</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#sponsors">Sponsors</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li class="buy-tickets"><a href="index.html#buy-tickets">Buy Tickets</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
   </header><!-- #header -->
 
-  <!--==========================
-    Intro Section
-  ============================-->
+  <main id="main" class="main-page">
 
-    
+    <!--==========================
+      Speaker Details Section
+    ============================-->
+    <section id="speakers-details" class="wow fadeIn">
+      <div class="container">
+        <div class="section-header">
+          <h2>Speaker Details</h2>
+          <p>Praesentium ut qui possimus sapiente nulla.</p>
+        </div>
 
-<section>
-	@yield('content')
-</section>
+        <div class="row">
+          <div class="col-md-6">
+            <img src="img/speakers/1.jpg" alt="Speaker 1" class="img-fluid">
+          </div>
+
+          <div class="col-md-6">
+            <div class="details">
+              <h2>Brenden Legros</h2>
+              <div class="social">
+                <a href=""><i class="fa fa-twitter"></i></a>
+                <a href=""><i class="fa fa-facebook"></i></a>
+                <a href=""><i class="fa fa-google-plus"></i></a>
+                <a href=""><i class="fa fa-linkedin"></i></a>
+              </div>
+              <p>Voluptatem perferendis sed assumenda voluptatibus. Laudantium molestiae sint. Doloremque odio dolore dolore sit. Quae labore alias ea omnis ex expedita sapiente molestias atque. Optio voluptas et.</p>
+ 
+              <p>Aboriosam inventore dolorem inventore nam est esse. Aperiam voluptatem nisi molestias laborum ut. Porro dignissimos eum. Tempore dolores minus unde est voluptatum incidunt ut aperiam.</p> 
+
+              <p>Et dolore blanditiis officiis non quod id possimus. Optio non commodi alias sint culpa sapiente nihil ipsa magnam. Qui eum alias provident omnis incidunt aut. Eius et officia corrupti omnis error vel quia omnis velit. In qui debitis autem aperiam voluptates unde sunt et facilis.</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </main>
 
 
   <!--==========================
@@ -149,21 +186,21 @@
   <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
   <!-- JavaScript Libraries -->
-  <script src="{{asset('u/lib/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('u/lib/jquery/jquery-migrate.min.js')}}"></script>
-  <script src="{{asset('u/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('u/lib/easing/easing.min.js')}}"></script>
-  <script src="{{asset('u/lib/superfish/hoverIntent.js')}}"></script>
-  <script src="{{asset('u/lib/superfish/superfish.min.js')}}"></script>
-  <script src="{{asset('u/lib/wow/wow.min.js')}}"></script>
-  <script src="{{asset('u/lib/venobox/venobox.min.js')}}"></script>
-  <script src="{{asset('u/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/superfish/hoverIntent.js"></script>
+  <script src="lib/superfish/superfish.min.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/venobox/venobox.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
   <!-- Contact Form JavaScript File -->
-  <script src="{{asset('u/contactform/contactform.js')}}"></script>
+  <script src="contactform/contactform.js"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="{{asset('u/js/main.js')}}"></script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>

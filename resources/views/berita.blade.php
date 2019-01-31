@@ -1,133 +1,119 @@
 @extends('layouts.user')
 @section('content')
-<style>
-	.tengah{
-		margin-left: 50%;
-	}
-</style>
-			<section class="blog-posts-area section-gap">
-				<div class="container">
-					<br>
-					<br>
-					<h1 class="text-center">Berita Kami</h1>
-					<br>
-					<br>
-					<div class="row">
-						<div class="col-lg-8 post-list blog-post-list">
-							<!-- START FOREACH -->
-							<?php
-						$berita = \App\Berita::latest()->paginate(env('PER_PAGE'));
+ <!--==========================
+      Speakers Section
+    ============================-->
+    <section id="subscribe">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h2>Berita Kami</h2>
+        </div>
 
-				?>
-				@foreach($berita as $br)
-							<div class="single-post">
-								<a href="{{url('lengkap/'.$br->id)}}"><img class="img-fluid" src="{{asset('images/'.$br->foto)}}" alt="" style="width: 800px; height: auto;"></a>
-								<ul class="tags">
-									<li><a href="#">Art, </a></li>
-									<li><a href="#">Technology, </a></li>
-									<li><a href="#">Fashion</a></li>
-								</ul>
-								<a href="{{url('lengkap/'.$br->id)}}">
-									<h1>
-										{{$br->judul}}
-									</h1>
-								</a>
-									<p>
-										{!!str_limit(strip_tags($br->isi), 200) !!}
-									</p>
-								<div class="bottom-meta">
-									<div class="user-details row align-items-center">
-										<div class="comment-wrap col-lg-6">
-											<ul>
-												<li><a href="#"><span class="lnr lnr-heart"></span>	4 likes</a></li>
-												<li><a href="#"><span class="lnr lnr-bubble"></span> 06 Comments</a></li>
-											</ul>
-										</div>
-										<div class="social-wrap col-lg-6">
-											<ul>
-												<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-												<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-												<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-												<li><a href="#"><i class="fa fa-behance"></i></a></li>
-											</ul>
-											
-										</div>
-									</div>
-								</div>
-							</div>
-							@endforeach
-		
-							<!-- ENDFOREACH -->
-																									
-						</div>
-						<div class="col-lg-4 sidebar">
-							<div class="single-widget search-widget">
-								<form class="example" action="#" style="margin:auto;max-width:300px">
-								  <input type="text" placeholder="Search Posts" name="search2">
-								  <button type="submit"><i class="fa fa-search"></i></button>
-								</form>								
-							</div>
 
-							<div class="single-widget protfolio-widget">
-								<img src="img/blog/user2.jpg" alt="">
-								<a href="#"><h4>Adele Gonzalez</h4></a>
-								<p>
-									MCSE boot camps have its supporters and
-									its detractors. Some people do not understand why you should have to spend money
-									on boot camp when you can get.
-								</p>
-								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-									<li><a href="#"><i class="fa fa-behance"></i></a></li>
-								</ul>								
-							</div>
+      </div>
+    </section>
+    <section id="speakers" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>Event Speakers</h2>
+          <p>Here are some of our speakers</p>
+        </div>
 
-							
-							<div class="single-widget recent-posts-widget">
-								<h4 class="title">Recent Posts</h4>
-								<div class="blog-list ">
-										@foreach ($s as $r)
-									<div class="single-recent-post d-flex flex-row">
-										<div class="recent-thumb">
-											<img class="img-fluid" src="img/blog/r1.jpg" alt="">
-										</div>
-										<div class="recent-details">
-											<a href="blog-single.html">
-												<h4>
-													{{$r->judul}} - {{$r->created_at->diffForHumans()}}
-												</h4>
-											</a>
-											<p>
-												{!!str_limit(strip_tags($r->isi), 100)!!}
-											</p>
-										</div>
-									</div>
-										@endforeach
-								</div>								
-							</div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker">
+              <img src="{{asset('u/img/speakers/1.jpg')}}" alt="Speaker 1" class="img-fluid">
+              <div class="details">
+                <h3><a href="speaker-details.html">Brenden Legros</a></h3>
+                <p>Quas alias incidunt</p>
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker">
+              <img src="{{asset('u/img/speakers/2.jpg')}}" alt="Speaker 2" class="img-fluid">
+              <div class="details">
+                <h3><a href="speaker-details.html">Hubert Hirthe</a></h3>
+                <p>Consequuntur odio aut</p>
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker">
+              <img src="{{asset('u/img/speakers/3.jpg')}}" alt="Speaker 3" class="img-fluid">
+              <div class="details">
+                <h3><a href="speaker-details.html">Cole Emmerich</a></h3>
+                <p>Fugiat laborum et</p>
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker">
+              <img src="{{asset('u/img/speakers/4.jpg')}}" alt="Speaker 4" class="img-fluid">
+              <div class="details">
+                <h3><a href="speaker-details.html">Jack Christiansen</a></h3>
+                <p>Debitis iure vero</p>
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker">
+              <img src="{{asset('u/img/speakers/5.jpg')}}" alt="Speaker 5" class="img-fluid">
+              <div class="details">
+                <h3><a href="speaker-details.html">Alejandrin Littel</a></h3>
+                <p>Qui molestiae natus</p>
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker">
+              <img src="{{asset('u/img/speakers/6.jpg')}}" alt="Speaker 6" class="img-fluid">
+              <div class="details">
+                <h3><a href="speaker-details.html">Willow Trantow</a></h3>
+                <p>Non autem dicta</p>
+                <div class="social">
+                  <a href=""><i class="fa fa-twitter"></i></a>
+                  <a href=""><i class="fa fa-facebook"></i></a>
+                  <a href=""><i class="fa fa-google-plus"></i></a>
+                  <a href=""><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-							<div class="single-widget category-widget">
-								<h4 class="title">Post Archive</h4>
-								<ul>
-									<li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Dec '17</h6> <span>37</span></a></li>
-									<li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Nov '17</h6> <span>24</span></a></li>
-									<li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Oct '17</h6> <span>59</span></a></li>
-									<li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Sep '17</h6> <span>29</span></a></li>
-									<li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Aug '17</h6> <span>15</span></a></li>
-									<li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Jul '17</h6> <span>09</span></a></li>
-									<li><a href="#" class="justify-content-between align-items-center d-flex"><h6>Jun '17</h6> <span>44</span></a></li>
-								</ul>
-							</div>						
-
-						</div>
-					</div>
-
-				</div>	
-				<div class="tengah">
-									{!! $s->render() !!}
-							</div>	
+    </section>
 			</section>
 			<!-- End blog-posts Area -->
 			

@@ -1,47 +1,99 @@
 @extends('layouts.user')
-@section('title')
-Merchandise
-@endsection
 @section('content')
 
 			<!-- Start training Area -->
-			
-		<br><br>
-			<section class="training-area section-gap">
-				<h1 class="mb-10 header-text text-center">Merchandise Kami</h1>
-				<div class="container" style="padding-top: 40px;">
-					<div class="row">
-              <?php
-              $merchandise = \App\Merchandise::all(); 
-               ?>
-               @foreach($merchandise as $q)
-            <!-- START FOREACH GAMBAR -->
+		<!--==========================
+      Hotels Section
+    ============================-->
+    <section id="subscribe">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h2>Merchandise</h2>
+        </div>
+
+
+      </div>
+    </section>
+    <section id="hotels" class="section-with-bg wow fadeInUp">
+
+      <div class="container">
+    
+
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="{{asset('u/img/hotels/1.jpg')}}" alt="Hotel 1" class="img-fluid">
+              </div>
+              <h3><a href="#">Hotel 1</a></h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>0.4 Mile from the Venue</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="{{asset('u/img/hotels/2.jpg')}}" alt="Hotel 2" class="img-fluid">
+              </div>
+              <h3><a href="#">Hotel 2</a></h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-half-full"></i>
+              </div>
+              <p>0.5 Mile from the Venue</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="{{asset('u/img/hotels/3.jpg')}}" alt="Hotel 3" class="img-fluid">
+              </div>
+              <h3><a href="#">Hotel 3</a></h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>0.6 Mile from the Venue</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="hotel">
+              <div class="hotel-img">
+                <img src="{{asset('u/img/hotels/3.jpg')}}" alt="Hotel 3" class="img-fluid">
+              </div>
+              <h3><a href="#">Hotel 3</a></h3>
+              <div class="stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p>0.6 Mile from the Venue</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
 
 
 
 
-				
-						<div class="col-lg-4 col-md-6">
-							<div class="single-service-page">
-								<div class="thumbs relative">
-							
-									<img class="img-fluid" src="{{ url('images/'.$q->logo)}}" alt="" style="width: 300px; height: 200px;">
-								</div>
-								<br>
-								<div class="details">
-									<a href="#"><h4>{{$q->nama}}</h4></a>
-									<p>
-										{!!$q->deskripsi!!}
-								</div>
-							</div>
-						</div>	
-
-            @endforeach
-						<!-- END FOREACH GAMBAR -->
-						</div>																		
-					</div>
-				</div>	
-			</section>
 			<!-- End training Area -->
 									
 			
