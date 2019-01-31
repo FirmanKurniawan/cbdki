@@ -29,9 +29,6 @@
   <link href="{{asset('../u/lib/venobox/venobox.css')}}" rel="stylesheet">
   <link href="{{asset('../u/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 
-  {{-- Font Awesome --}}
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
   <!-- Main Stylesheet File -->
   <link href="{{('../u/css/style.css')}}" rel="stylesheet">
 
@@ -131,8 +128,8 @@
             @foreach($profile as $p)
             <p>
               {{$p->alamat}}<br>
-              <strong>Phone:</strong>{{$p->telepon}}<br>
-              <strong>Email:</strong>{{$p->email}}<br>
+              <strong>Phone : </strong>{{$p->telepon}}<br>
+              <strong>Email : </strong>{{$p->email}}<br>
             </p>
             @endforeach
 

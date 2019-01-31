@@ -114,7 +114,6 @@ h6 {
   display: block;
   width: 60px;
   height: 5px;
-  background: #f82249;
   bottom: 0;
   left: calc(50% - 25px);
 }
@@ -838,19 +837,12 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #schedule .schedule-item {
-  border-bottom: 1px solid #cad4f6;
-  padding-top: 15px;
   padding-bottom: 15px;
   transition: background-color ease-in-out 0.3s;
 }
 
-#schedule .schedule-item:hover {
-  background-color: #fff;
-}
-
 #schedule .schedule-item time {
   padding-bottom: 5px;
-  display: inline-block;
 }
 
 #schedule .schedule-item .speaker {

@@ -2,6 +2,15 @@
 @section('content')
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<style type="text/css">
+	.bulat{
+border-radius:100em;
+opacity:1;
+width:200px;
+height:200px;
+}
+</style>
  <section id="subscribe">
       <div class="container wow fadeInUp">
         <div class="section-header">
@@ -45,11 +54,11 @@
 	                    '<input class="form-control" type="text" readonly style="background-color:#fff;" value="'+results.no_identitas+'">';
 	                  $('#no_identitas').val(results.no_identitas)
 	                  document.getElementById('gambar').innerHTML = 
-	                    '<img src="images/'+results.foto+' "class="bulat2" style="margin-left:30px;"/>';
+	                    '<img src="images/'+results.foto+' "class="bulat2" style="margin-left:auto;width:30%;"/>';
 	                  }else{
 	                    document.getElementById('no_identitas1').innerHTML =
-	                    '<center><h1><i class="fas fa-times-circle fa-6x" style="color:red;margin-bottom:50px;margin-left:30px;"></i></h1></center>'+
-	                    '<h2 style="margin-left:30px;">IDENTITAS TIDAK TERSEDIA</h2>';
+	                    '<center><h1><i class="fas fa-times-circle fa-3x" style="color:red;margin-left:150%;"></i></h1></center>'+
+	                    '<h2 style="margin-left: 150%;">IDENTITAS TIDAK TERSEDIA</h2>';
 	                  }
 	             }
 	        }); 
@@ -62,7 +71,7 @@
     <!-- Modal -->
 	<div class="modal fade" id="exampleModal">
 	  <div>
-	    <div class="modal-content" style="width: 500px;height: auto;margin-left: auto;margin-right: auto;margin-top: 7%;">
+	    <div class="modal-content" style="width: 100%;height: 100%;margin-left: auto;margin-right: auto;">
 	      <div class="modal-header">
 	        <h5 class="modal-title" id="exampleModalLabel">Cari Anggota</h5>
 	        <form action="{{url('/member')}}">
@@ -75,15 +84,35 @@
 	      <div class="row">
 	        <div class="float-left">
 	          <br>
-	         <div id="gambar" class="img-fluid">
+	         <div id="gambar" class="img-fluid"></div>
 	         </div>
-	         </div>
-	         <div class="float-right" style="margin-left: 30px;">  
-	          <div id="nama"></div>
+	         <div class="float-right" style="margin-left: 30px;">
+            {{--  --}}
+	          <div class="row" id="nama">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+          </div>
+          {{--  --}}
 	      <br>
-	      <div id="alamat"></div>
+	      {{--  --}}
+            <div class="row" id="alamat">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+          </div>
+          {{--  --}}
 	      <br>
-	      <div id="no_identitas"></div>
+	      {{--  --}}
+            <div class="row" id="no_identitas">
+            <div class="col">
+            </div>
+            <div class="col">
+            </div>
+          </div>
+          {{--  --}}
 	      <div id="no_identitas1"></div>
 	          <!-- {{-- <img src="{{url('images/'.$foto)}}"> --}} -->
 
@@ -100,51 +129,51 @@
         <div class="section-header">
           <h2>Kordinasi Wilayah</h2>
         </div>
-        	<?php
-                $i = 1;
-               	$kiwil = App\Korwil::all();
-             ?>
+        <?php
+        	$i = 1;
+        	$kiwil = App\Korwil::all();
+        ?>
         @foreach($kiwil as $k)
+        <div style="margin-top: 2%;">
         <ul class="nav nav-tabs" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" href="#day-{{$k->id}}" role="tab" data-toggle="tab">{{$k->nama}}</a>
+                  <img src="{{url('images/'.$k->logo)}}" class="bulat">
+                  <br>
+                  <br>
+            <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">{{$k->nama}}</a>
           </li>
         </ul>
-        @endforeach
+        <h3 class="sub-heading">{!!$k->keterangan!!}</h3>
         <?php
-        	$km = App\Korwilmember::where('idkorwil',$k->id)->get();
+            $km = App\Korwilmember::where('idkorwil',$k->id)->get();
         ?>
-        <h3 class="sub-heading">Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia. Eius
-          necessitatibus voluptatem quis labore perspiciatis quia.</h3>
-
         <div class="tab-content row justify-content-center">
 
           <!-- Schdule Day 1 -->
           <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
-
             <div class="row schedule-item">
-              <div class="col-md-2"><time>09:30 AM</time></div>
+              <div class="col-md-2"><time>Kode</time></div>
               <div class="col-md-10">
-                <h4>Registration</h4>
-                <p>Fugit voluptas iusto maiores temporibus autem numquam magnam.</p>
+                <h4>Daftar Member Korwil</h4>
               </div>
             </div>
-
+            @foreach($km as $ka)
             <div class="row schedule-item">
-              <div class="col-md-2"><time>10:00 AM</time></div>
+              <div class="col-md-2"><time>{{$ka->kode}}</time></div>
               <div class="col-md-10">
                 <div class="speaker">
                   <img src="{{asset('u/img/speakers/1.jpg')}}" alt="Brenden Legros">
                 </div>
-                <h4>Keynote <span>Brenden Legros</span></h4>
-                <p>Facere provident incidunt quos voluptas.</p>
+                <h4>{{$ka->nama}}</h4>
+                <p>Registrasi : {{$ka->created_at}}</p>
               </div>
             </div>
-
+            @endforeach
           </div>
           <!-- End Schdule Day 1 -->
         </div>
-
+        </div>
+        @endforeach
       </div>
 
     </section>
