@@ -38,7 +38,7 @@ Edit - Merchandise
                                           <div class="form-group col-md-4">
                                             <center>
                                                 <div class="container">        
-                                                  <img src="{{url('images/'. $merchandise->logo)}}" alt="Nature" class="responsive" id="blah1" style="width: 300px;height: 300px; margin-left: auto; margin-right: auto;">                                    
+                                                  <img src="{{url('picture1/'. $merchandise->logo)}}" alt="Nature" class="responsive" id="blah1" style="width: 300px;height: 300px; margin-left: auto; margin-right: auto;">                                    
                                                     <input name="logo" type="file" class="" style="" onchange="readURL1(this);" >
                                                 </div>
 

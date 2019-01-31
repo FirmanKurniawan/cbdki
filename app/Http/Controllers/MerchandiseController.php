@@ -70,7 +70,7 @@ class MerchandiseController extends Controller
             $file1 = $r->file('logo');
             $filename1 = $file1->getClientOriginalName();
             Input::file('logo')->move(storage_path('images'), $filename1);
-            $m->foto = $filename1;
+            $m->logo = $filename1;
         }
         $m->save();
         return redirect(url('/admin/merchandise')); 
