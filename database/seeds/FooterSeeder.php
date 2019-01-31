@@ -13,10 +13,8 @@ class FooterSeeder extends Seeder
     public function run()
     {
         DB::table('footers')->insert([
-            'pengantar1' => 'Where does it come from?
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock.',
-            'pengantar2' => 'Where does it come from?
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock.',
+            'pengantar1' => 'We are CB Djakarta',
+            'pengantar2' => 'hello world',
             'pengantar3' => 'Where does it come from?
 Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock.'
         ]);

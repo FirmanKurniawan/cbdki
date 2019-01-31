@@ -66,13 +66,13 @@
       <div class="container wow fadeInUp">
         <div class="section-header">
           <h2>Newsletter</h2>
-          <p>Rerum numquam illum recusandae quia mollitia consequatur.</p>
+          <p>You can trust us. we only send  offers, not a single spam.</p>
         </div>
-
-        <form method="POST" action="#">
+        <form action="{{url('/admin/newsletter/save')}}" method="POST" action="#">
+          @csrf
           <div class="form-row justify-content-center">
             <div class="col-auto">
-              <input type="text" class="form-control" placeholder="Enter your Email">
+              <input type="email" name="email" class="form-control" placeholder="Enter your Email">
             </div>
             <div class="col-auto">
               <button type="submit">Subscribe</button>
