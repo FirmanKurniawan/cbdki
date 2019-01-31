@@ -65,7 +65,7 @@ class BeritaController extends Controller
     }
     public function pagi()
     {
-        $s = Berita::latest()->paginate(5);
+        $s = Berita::latest()->paginate(6);
         return view('berita')->with('s',$s);
     }
 }
