@@ -20,34 +20,17 @@ Edit - Berita
                                             </div>
                                         </div>
                                     </div>
-                                      <div class="form-row">
-                                        <div class="form-group col-md-6">
-                                        	<input type="hidden" name="id" value="{{$b->id}}">
-                                          	<label for="inputEmail4">Judul</label>
-                                          	<input type="text" class="form-control" id="inputEmail4" placeholder="Judul" name="judul" value="{{$b->judul}}">
+                                        <div class="form-group col-md-12">
+                                          <input type="hidden" name="id" value="{{$b->id}}">
+                                            <label for="inputEmail4">Judul</label>
+                                            <input type="text" class="form-control" id="inputEmail4" placeholder="Judul" name="judul" value="{{$b->judul}}">
                                         </div>
-                                        <div class="form-group col-md-6">
-                                          <label for="inputPassword4">Tanggal</label>
-                                          <input type="date" class="form-control" id="inputPassword4" placeholder="Tanggal" name="tanggal" value="{{$b->tanggal}}">
-                                        </div>
-                                      </div>
-
                                       <div class="form-row">
                                         <div class="form-group col-md-12">
                                           <label for="inputCity">Isi</label>
                                           <textarea id="ckeditor1" type="text" class="form-control" id="inputCity" name="isi" placeholder="Isi" value="">{{$b->isi}}</textarea>
                                         </div>
-                                      
-                                  </div>
-
-
-                                      <div class="form-row">
-                                        <div class="form-group col-md-12">
-                                          <label for="inputEmail4">Penulis</label>
-                                          <input type="text" class="form-control" id="inputEmail4" placeholder="Penulis" name="penulis" value="{{$b->penulis}}" readonly>
-                                        </div>
                                       </div>
-                                      
                                       <div class="form-row">
                                         <center>
                                           <div class="form-group col-md-12">
@@ -73,7 +56,6 @@ Edit - Berita
                                 </div>
                             </div>
                         </form>
-
                         <div class="col-lg-3"></div>
                     </div>
                 </div>
