@@ -53,12 +53,12 @@ height:200px;
 	                    '<label>No Identitas : </label>' +
 	                    '<input class="form-control" type="text" readonly style="background-color:#fff;" value="'+results.no_identitas+'">';
 	                  $('#no_identitas').val(results.no_identitas)
-	                  document.getElementById('gambar').innerHTML = 
+	                  document.getElementById('gambar').innerHTML =
 	                    '<img src="images/'+results.foto+' "class="bulat2" style="margin-left:auto;width:30%;"/>';
 	                  }else{
 	                    document.getElementById('no_identitas1').innerHTML =
-	                    '<center><h1><i class="fas fa-times-circle fa-3x" style="color:red;margin-left:150%;"></i></h1></center>'+
-	                    '<h2 style="margin-left: 150%;">IDENTITAS TIDAK TERSEDIA</h2>';
+	                    '<center><h1><i class="fas fa-times-circle fa-3x"></i></h1></center>'+
+	                    '<h2>IDENTITAS TIDAK TERSEDIA</h2>';
 	                  }
 	             }
 	        }); 
@@ -113,7 +113,7 @@ height:200px;
             </div>
           </div>
           {{--  --}}
-	      <div id="no_identitas1"></div>
+	      <div id="no_identitas1" style="margin-left: auto;margin-right: auto;"></div>
 	          <!-- {{-- <img src="{{url('images/'.$foto)}}"> --}} -->
 
 			</div>
