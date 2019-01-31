@@ -176,7 +176,7 @@ Route::get('/merchandise', function() {
     return view('merchandise');
 });
 Route::get('/berita', 'BeritaController@pagi');
-Route::get('lengkap/{id}','BeritaController@baca');
+Route::get('berita-detail/{id}','BeritaController@baca');
 Route::get('member2/search2', 'MemberController@search2');
 Route::get('member/search', 'MemberController@search');
 Route::get('search2/{id}', 'MemberController@search2');

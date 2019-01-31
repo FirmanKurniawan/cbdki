@@ -2,8 +2,14 @@
 <html lang="en">
 
 <head>
+  <!-- Site Title -->
+    <?php
+  $q = \App\Profile::where('id', 1)->first();
+
+?>
+   
   <meta charset="utf-8">
-  <title>TheEvent - Bootstrap Event Template</title>
+  <title>{{$q->nama}}</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
   <meta content="" name="description">
@@ -16,15 +22,15 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
   <!-- Bootstrap CSS File -->
-  <link href="{{asset('u/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+  <link href="{{asset('../u/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
 
-  <link href="{{asset('u/lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
-  <link href="{{asset('u/lib/animate/animate.min.css')}}" rel="stylesheet">
-  <link href="{{asset('u/lib/venobox/venobox.css')}}" rel="stylesheet">
-  <link href="{{asset('u/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
+  <link href="{{asset('../u/lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
+  <link href="{{asset('../u/lib/animate/animate.min.css')}}" rel="stylesheet">
+  <link href="{{asset('../u/lib/venobox/venobox.css')}}" rel="stylesheet">
+  <link href="{{asset('../u/lib/owlcarousel/assets/owl.carousel.min.css')}}" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="{{('u/css/style.css')}}" rel="stylesheet">
+  <link href="{{('../u/css/style.css')}}" rel="stylesheet">
 
   <!-- =======================================================
     Theme Name: TheEvent
@@ -45,7 +51,7 @@
       <div id="logo" class="pull-left">
         <!-- Uncomment below if you prefer to use a text logo -->
         <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
-        <a href="#intro" class="scrollto"><img src="{{asset('u/img/logo.png')}}" alt="" title=""></a>
+        <a href="#intro" class="scrollto"><img src="{{asset('cbi_user/img/CBI.png')}}" alt="" title=""></a>
       </div>
 
       <nav id="nav-menu-container">
@@ -149,21 +155,21 @@
   <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
 
   <!-- JavaScript Libraries -->
-  <script src="{{asset('u/lib/jquery/jquery.min.js')}}"></script>
-  <script src="{{asset('u/lib/jquery/jquery-migrate.min.js')}}"></script>
-  <script src="{{asset('u/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-  <script src="{{asset('u/lib/easing/easing.min.js')}}"></script>
-  <script src="{{asset('u/lib/superfish/hoverIntent.js')}}"></script>
-  <script src="{{asset('u/lib/superfish/superfish.min.js')}}"></script>
-  <script src="{{asset('u/lib/wow/wow.min.js')}}"></script>
-  <script src="{{asset('u/lib/venobox/venobox.min.js')}}"></script>
-  <script src="{{asset('u/lib/owlcarousel/owl.carousel.min.js')}}"></script>
+  <script src="{{asset('../u/lib/jquery/jquery.min.js')}}"></script>
+  <script src="{{asset('../u/lib/jquery/jquery-migrate.min.js')}}"></script>
+  <script src="{{asset('../u/lib/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+  <script src="{{asset('../u/lib/easing/easing.min.js')}}"></script>
+  <script src="{{asset('../u/lib/superfish/hoverIntent.js')}}"></script>
+  <script src="{{asset('../u/lib/superfish/superfish.min.js')}}"></script>
+  <script src="{{asset('../u/lib/wow/wow.min.js')}}"></script>
+  <script src="{{asset('../u/lib/venobox/venobox.min.js')}}"></script>
+  <script src="{{asset('../u/lib/owlcarousel/owl.carousel.min.js')}}"></script>
 
   <!-- Contact Form JavaScript File -->
-  <script src="{{asset('u/contactform/contactform.js')}}"></script>
+  <script src="{{asset('../u/contactform/contactform.js')}}"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="{{asset('u/js/main.js')}}"></script>
+  <script src="{{asset('../u/js/main.js')}}"></script>
 </body>
 
 </html>
