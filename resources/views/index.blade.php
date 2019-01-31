@@ -3,7 +3,7 @@
 <!-- start banner Area -->
 
 <?php
-	$q = \App\Profile::where('id', 1)->first();
+  $q = \App\Profile::where('id', 1)->first();
 
 ?>
 <section id="intro">
@@ -41,7 +41,7 @@
         </div>
       </div>
     </section>
-			 <section id="gallery" class="wow fadeInUp">
+       <section id="gallery" class="wow fadeInUp">
 
       <div class="container">
         <div class="section-header">
@@ -49,18 +49,14 @@
           <p>Check our gallery from the recent events</p>
         </div>
       </div>
-
+      <?php
+      $gallery = \App\Gallery::all();  
+      ?>                               
       <div class="owl-carousel gallery-carousel">
-        <a href="{{asset('u/img/gallery/1.jpg')}}" class="venobox" data-gall="gallery-carousel"><img src="{{asset('u/img/gallery/1.jpg')}}" alt=""></a>
-        <a href="{{asset('u/img/gallery/2.jpg')}}" class="venobox" data-gall="gallery-carousel"><img src="{{asset('u/img/gallery/2.jpg')}}" alt=""></a>
-        <a href="{{asset('u/img/gallery/3.jpg')}}" class="venobox" data-gall="gallery-carousel"><img src="{{asset('u/img/gallery/3.jpg')}}" alt=""></a>
-        <a href="{{asset('u/img/gallery/4.jpg')}}" class="venobox" data-gall="gallery-carousel"><img src="{{asset('u/img/gallery/4.jpg')}}" alt=""></a>
-        <a href="{{asset('u/img/gallery/5.jpg')}}" class="venobox" data-gall="gallery-carousel"><img src="{{asset('u/img/gallery/5.jpg')}}" alt=""></a>
-        <a href="{{asset('u/img/gallery/6.jpg')}}" class="venobox" data-gall="gallery-carousel"><img src="{{asset('u/img/gallery/6.jpg')}}" alt=""></a>
-        <a href="{{asset('u/img/gallery/7.jpg')}}" class="venobox" data-gall="gallery-carousel"><img src="{{asset('u/img/gallery/7.jpg')}}" alt=""></a>
-        <a href="{{asset('u/img/gallery/8.jpg')}}" class="venobox" data-gall="gallery-carousel"><img src="{{asset('u/img/gallery/8.jpg')}}" alt=""></a>
+         @foreach ($gallery as $n)
+        <a href="{{ asset('images/'.$n->gambar) }}" class="venobox" data-gall="gallery-carousel"><img src="{{ asset('images/'.$n->gambar) }}" alt=""></a>
+        @endforeach
       </div>
-
     </section>
     <section id="subscribe">
       <div class="container wow fadeInUp">
@@ -81,9 +77,9 @@
         </form>
 
       </div>
-    </section>\
-			<!-- End latest-blog Area -->		
+    </section>
+      <!-- End latest-blog Area -->   
 
-			<!-- Start gallery Area -->
-		
+      <!-- Start gallery Area -->
+    
 @endsection
