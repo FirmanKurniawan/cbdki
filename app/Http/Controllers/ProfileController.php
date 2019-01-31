@@ -22,6 +22,7 @@ class ProfileController extends Controller
         $email = $r->email;
         $facebook = $r->facebook;
         $twitter = $r->twitter;
+        $linkyt = $r->linkyt;
         $instagram = $r->instagram;
         $pengantar1 = $r->pengantar1;
         $pengantar2 = $r->pengantar2;
@@ -37,6 +38,7 @@ class ProfileController extends Controller
         $profile->email = $email;
         $profile->facebook = $facebook;
         $profile->twitter = $twitter;
+        $profile->linkyt = $linkyt;
         $profile->instagram = $instagram;
         $profile->pengantar1 = $pengantar1;
         $profile->pengantar2 = $pengantar2;

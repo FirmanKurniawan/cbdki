@@ -50,6 +50,12 @@ Admin - Profile
                                       </div>
                                       <div class="form-row">
                                         <div class="form-group col-md-12">
+                                          <label for="inputCity">Link You Tube</label>
+                                          <input type="text" class="form-control" id="inputCity" name="linkyt" placeholder="Input URL in here" value="{{$p->linkyt}}">
+                                        </div>
+                                      </div>
+                                      <div class="form-row">
+                                        <div class="form-group col-md-12">
                                           <label for="inputCity">Facebook</label>
                                           <input type="text" class="form-control" id="inputCity" name="facebook" placeholder="Input URL in here" value="{{$p->facebook}}">
                                         </div>

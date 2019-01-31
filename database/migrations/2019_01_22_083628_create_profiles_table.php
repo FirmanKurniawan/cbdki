@@ -22,6 +22,7 @@ class CreateProfilesTable extends Migration
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
             $table->string('instagram')->nullable();
+            $table->string('linkyt')->nullable();
             $table->text('pengantar1')->nullable();
             $table->text('pengantar2')->nullable();
             $table->text('pengantar3')->nullable();
