@@ -94,7 +94,7 @@ Route::post('/admin/contact/save', 'ContactController@save');
     Route::get('/ubah-password','UserController@index');
     Route::post('/ubah-password','UserController@update');
 //Berita
-    Route::get('/admin/berita', 'BeritaController@index');
+    Route::get('/admin/berita', 'BeritaController@pagiindex');
     Route::get('/admin/berita/add', 'BeritaController@add');
     Route::post('/admin/berita/save', 'BeritaController@save');
     Route::get('/admin/berita/edit/{id}', 'BeritaController@edit');

@@ -36,7 +36,7 @@ Admin - Berita
                                             <tbody>
                                                 <?php
                                                 $i = 1;
-                                                $berita = \App\Berita::all();  
+                                                $berita = \App\Berita::latest()->paginate(env('PER_PAGE'));  
                                                 ?>
                                                 @foreach ($berita as $m)
                                                 <tr>
@@ -53,11 +53,13 @@ Admin - Berita
                                                 </tr>
                                                 @endforeach
                                             </tbody>
+
                                         </table>
                                     </div>
                                 </div>
                             </div>     
                         </form>
+                        {!! $w->render() !!}
                         </div>
                     </div>
                   <div class="login-bg">
