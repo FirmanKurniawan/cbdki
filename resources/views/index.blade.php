@@ -15,7 +15,7 @@
       </p>
       <a href="{{$q->linkyt}}" class="venobox play-btn mb-4" data-vbtype="video"
         data-autoplay="true"></a>
-      <a href="#about" class="about-btn scrollto">About</a>
+      <a href="#about" class="about-btn scrollto">Visi Misi</a>
     </div>
   </section>
 
@@ -26,22 +26,33 @@
     ============================-->
     <section id="about">
 <?php
-  $q = \App\About::where('id', 1)->first();
+  $q = \App\Visimisi::where('id', 1)->first();
 
 ?>  
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
-            <h2>About Us</h2>
-            <p>{!!$q->pengantar1!!}</p>
+            <h2>Visi</h2>
+              <?php 
+                  $visi = \App\Visimisi::all()->where('tipe',1);
+               ?>
+               @foreach($visi as $v)
+              <p>
+                {!!$v->isi!!}
+              </p>
+              @endforeach
+
           </div>
-          <div class="col-lg-3">
-            <h1 hidden="true">Where</h1>
-            <p>{!!$q->pengantar2!!}</p>
-          </div>
-          <div class="col-lg-3">
-            <h1 hidden="true">When</h1>
-            <p>{!!$q->pengantar3!!}</p>
+          <div class="col-lg-6">
+            <h2>Misi</h2>
+              <?php 
+                  $misi = \App\Visimisi::all()->where('tipe',2);
+               ?>
+               @foreach($misi as $v)
+              <p>
+                {!!$v->isi!!}
+              </p>
+              @endforeach
           </div>
         </div>
       </div>

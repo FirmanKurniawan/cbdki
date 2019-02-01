@@ -1,5 +1,6 @@
 @extends('layouts.user')
 @section('content')
+<br>
   <section id="subscribe">
       <div class="container wow fadeInUp">
         <div class="section-header">
