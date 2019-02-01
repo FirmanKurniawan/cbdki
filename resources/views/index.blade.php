@@ -6,7 +6,7 @@
   $q = \App\Profile::where('id', 1)->first();
 
 ?>
-<section id="intro">
+<section id="intro"><img src="{{asset('images/'.$q->gambar_depan)}}" id="intro" style="background-size: cover;">
     <div class="intro-container wow fadeIn">
       <h1 class="mb-4 pb-0">{!!$q->pengantar1!!}</h1>
       <p class="mb-4 pb-0">

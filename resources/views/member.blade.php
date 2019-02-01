@@ -7,8 +7,8 @@
 	.bulat{
 border-radius:100em;
 opacity:1;
-width:200px;
-height:200px;
+width:100px;
+height:100px;
 }
 </style>
  <section id="subscribe">
@@ -124,57 +124,46 @@ height:200px;
 	</div>
     {{-- AKHIR MODAL --}}
 
-<section id="schedule" class="section-with-bg">
-      <div class="container wow fadeInUp">
-        <div class="section-header">
-          <h2>Kordinasi Wilayah</h2>
-        </div>
-        <?php
-        	$i = 1;
-        	$kiwil = App\Korwil::all();
-        ?>
-        @foreach($kiwil as $k)
-        <div style="margin-top: 2%;">
-        <ul class="nav nav-tabs" role="tablist">
-          <li class="nav-item">
-                  <img src="{{url('images/'.$k->logo)}}" class="bulat">
-                  <br>
-                  <br>
-            <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">{{$k->nama}}</a>
-          </li>
-        </ul>
-        <h3 class="sub-heading">{!!$k->keterangan!!}</h3>
-        <?php
-            $km = App\Korwilmember::where('idkorwil',$k->id)->get();
-        ?>
-        <div class="tab-content row justify-content-center">
+<section id="hotels" class="section-with-bg wow fadeInUp">
+  <h1 class="text-center">Kordinasi Wilayah</h1>
+  <br>
+  <br>
+      <div class="container">
+    
 
-          <!-- Schdule Day 1 -->
-          <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>Kode</time></div>
-              <div class="col-md-10">
-                <h4>Daftar Member Korwil</h4>
+        <div class="row">
+              <?php
+                  $korwil = \App\Korwil::all(); 
+               ?>
+               @foreach($korwil as $key)
+
+          <div class="col-lg-6 col-md-6">
+            
+              <div class="hotel-img">
+<h3><img src="{{ url('images/'.$key->logo)}}" class="bulat">&nbsp;&nbsp;{{$key->nama}}</h3>
               </div>
-            </div>
-            @foreach($km as $ka)
-            <div class="row schedule-item">
-              <div class="col-md-2"><time>{{$ka->kode}}</time></div>
-              <div class="col-md-10">
-                <div class="speaker">
-                  <img src="{{asset('u/img/speakers/1.jpg')}}" alt="Brenden Legros">
-                </div>
-                <h4>{{$ka->nama}}</h4>
-                <p>Registrasi : {{$ka->created_at}}</p>
-              </div>
-            </div>
-            @endforeach
+                <?php
+                                    $km = App\Korwilmember::where('idkorwil',$key->id)->get();
+                                 ?>
+                                 @foreach($km as $ka)
+                                <ol style="list-style-type: none;">
+                                  <li style="color: black;">
+                                    <br>  &nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i> &nbsp;<img src="{{url('images/'.$ka->logo)}}" style="width: 50px;">&nbsp;{{$ka->nama}}&nbsp;({{$ka->kode}})    </li>
+                                    </ol>
+                                    @endforeach
+<br>
+
+          
           </div>
-          <!-- End Schdule Day 1 -->
+
+
+
+          @endforeach
+
         </div>
-        </div>
-        @endforeach
       </div>
+
+    </section>
 
     </section>
     @endsection
