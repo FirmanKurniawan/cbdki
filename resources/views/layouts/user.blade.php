@@ -57,11 +57,11 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li ><a href="{{url('/')}}">Home</a></li>
-          <li><a href="{{url('member')}}">Member</a></li>
-          <li><a href="{{url('merchandise')}}">Merchandise</a></li>
+          <li ><a href="{{url('/')}}">Beranda</a></li>
+          <li><a href="{{url('member')}}">Anggota</a></li>
+          <li><a href="{{url('merchandise')}}">Sovenir</a></li>
           <li><a href="{{url('berita')}}">Berita</a></li>
-          <li><a href="{{url('contact')}}">Contact</a></li>
+          <li><a href="{{url('contact')}}">Kontak</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
