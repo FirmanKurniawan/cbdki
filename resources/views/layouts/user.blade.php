@@ -86,7 +86,7 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 footer-info">
+          <div class="col-lg-3 col-md-3 footer-info">
             <?php
                 $data = \App\Footer::where('id',1)->first();
                 ?>
@@ -99,19 +99,19 @@
                 </p>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-links">
+          <div class="col-lg-3 col-md-3 footer-contact">
             <h4>Berlangganan</h4>
-            <ul>
-              <form action="{{url('admin/newsletter/save')}}" method="POST">
-                @csrf
-              <input type="email" class="form-control" name="email" placeholder="Email" style="border-radius: 50px; border : 0;">
-              <br>
-              <button type="submit" class="btn" style="background-color: #E0072F; color: #fff; border-radius: 50px;">Kirim</button>
-              </form>
-            </ul>
+             <form method="POST" action="#">
+                  <input type="text" class="form-control" placeholder="Masukkan Email" style="border-radius: 50px; font-size: 14px;">
+                  <br>
+                  <center>
+                  <button type="submit" class="btn" style="background-color: #e0072f; color: #fff; border-radius: 50px;">Kirim</button>
+                  </center>
+            </form>
           </div>
 
-          <div class="col-lg-3 col-md-6 footer-contact">
+
+          <div class="col-lg-3 col-md-3 footer-contact">
             <h4>Kontak Kami</h4>
             <?php  
             $profile = \App\Profile::all()->where('id', 1);
@@ -123,7 +123,6 @@
               <strong>Email : </strong>{{$p->email}}<br>
             </p>
             @endforeach
-
             <div class="social-links">
               <?php  
               $profile = \App\Profile::all()->where('id', 1);
@@ -137,6 +136,10 @@
 
           </div>
 
+            <div class="col-lg-3">
+              <img src="{{ asset('/cbi_user/img/CBI.png')}}" class="img-fluid" alt="Responsive image">
+            </div>
+          </div>
         </div>
       </div>
     </div>
