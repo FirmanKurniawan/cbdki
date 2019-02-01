@@ -25,14 +25,27 @@
       About Section
     ============================-->
     <section id="about">
+
+    
 <?php
   $q = \App\Visimisi::where('id', 1)->first();
 
 ?>  
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h2>Visi</h2>
+        <div class="row" style="margin-left: 10%;">
+          <div class="col-lg-4">
+            <h3>Riwayat</h3>
+              <?php 
+                  $history = \App\History::all();
+               ?>
+               @foreach($history as $v)
+              <p>
+                {!!$v->history!!}
+              </p>
+              @endforeach
+          </div>
+          <div class="col-lg-4">
+            <h3>Visi</h3>
               <?php 
                   $visi = \App\Visimisi::all()->where('tipe',1);
                ?>
@@ -41,10 +54,9 @@
                 {!!$v->isi!!}
               </p>
               @endforeach
-
           </div>
-          <div class="col-lg-6">
-            <h2>Misi</h2>
+          <div class="col-lg-4">
+            <h3>Misi</h3>
               <?php 
                   $misi = \App\Visimisi::all()->where('tipe',2);
                ?>
@@ -77,26 +89,6 @@
          @foreach ($gallery as $n)
         <a href="{{ asset('images/'.$n->gambar) }}" class="venobox" data-gall="gallery-carousel"><img src="{{ asset('images/'.$n->gambar) }}" alt=""></a>
         @endforeach
-      </div>
-    </section>
-    <section id="subscribe">
-      <div class="container wow fadeInUp">
-        <div class="section-header">
-          <h2>Newsletter</h2>
-          <p>You can trust us. we only send  offers, not a single spam.</p>
-        </div>
-        <form action="{{url('/admin/newsletter/save')}}" method="POST" action="#">
-          @csrf
-          <div class="form-row justify-content-center">
-            <div class="col-auto">
-              <input type="email" name="email" class="form-control" placeholder="Enter your Email">
-            </div>
-            <div class="col-auto">
-              <button type="submit">Subscribe</button>
-            </div>
-          </div>
-        </form>
-
       </div>
     </section>
       <!-- End latest-blog Area -->   
