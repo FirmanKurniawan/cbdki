@@ -43,22 +43,34 @@ height:100px;
                url:"search2/" + id,
                success : function(results) {
                 if (results.no_identitas) {
-                    document.getElementById('nama').innerHTML =
+                  document.getElementById('nama').innerHTML =
                       '<label>Nama : </label>' +
                       '<input class="form-control" type="text" readonly style="background-color:#fff;" value="'+results.nama+'">';
-                    document.getElementById('alamat').innerHTML =
-                      '<label>Alamat : </label>' +
+                  document.getElementById('alamat').innerHTML =
+                      '<label>Nama : </label>' +
                       '<input class="form-control" type="text" readonly style="background-color:#fff;" value="'+results.alamat+'">';
-                    document.getElementById('no_identitas').innerHTML =
-                      '<label>No Identitas : </label>' +
+                  document.getElementById('no_identitas').innerHTML =
+                      '<label>Nama : </label>' +
                       '<input class="form-control" type="text" readonly style="background-color:#fff;" value="'+results.no_identitas+'">';
-                    $('#no_identitas').val(results.no_identitas)
-                    document.getElementById('gambar').innerHTML =
-                      '<img src="images/'+results.foto+' "class="bulat2" style="margin-left:auto;width:30%;"/>';
+                  document.getElementById('gambar').innerHTML =
+                      '<img src="images/'+results.foto+' "class="bulat2" style="width:30%;"/>';
+                    $(document).ready(function(){
+                     
+                              $('#modal-kotak , #bg').fadeIn("slow");
+                               
+                          $('#tombol-tutup').click(function(){
+                            $('#modal-kotak , #bg').fadeOut("slow");
+                          });
+                        });
                     }else{
-                      document.getElementById('no_identitas1').innerHTML =
-                      '<center><h1><i class="fas fa-times-circle fa-3x"></i></h1></center>'+
-                      '<h2>IDENTITAS TIDAK TERSEDIA</h2>';
+                      document.getElementById('nama23').innerHTML =
+                      '<label>Data Tidak Ditemukan</label>';
+                        $(document).ready(function(){
+                              $('#modal-kotak2 , #bg').fadeIn("slow");
+                          $('#tombol-tutup2').click(function(){
+                            $('#modal-kotak2 , #bg').fadeOut("slow");
+                          });
+                        });
                     }
                }
           }); 
@@ -84,11 +96,9 @@ height:100px;
         <div class="row">
           <div class="float-left">
             <br>
-           <div id="gambar" class="img-fluid"></div>
            </div>
            <div class="float-right" style="margin-left: 30px;">
             {{--  --}}
-            <div class="row" id="nama">
             <div class="col">
             </div>
             <div class="col">
@@ -97,7 +107,6 @@ height:100px;
           {{--  --}}
         <br>
         {{--  --}}
-            <div class="row" id="alamat">
             <div class="col">
             </div>
             <div class="col">
@@ -106,7 +115,6 @@ height:100px;
           {{--  --}}
         <br>
         {{--  --}}
-            <div class="row" id="no_identitas">
             <div class="col">
             </div>
             <div class="col">
@@ -120,6 +128,38 @@ height:100px;
     </div>
         </div>
       </div>
+    </div>
+  </div>
+    {{-- AKHIR MODAL --}}
+    {{-- AWAL MODAL --}}
+  <div class="container" id="modal-kotak">
+    <div>
+     
+      <div class="modal-body">
+        <div class="row">
+          <center>
+          <div id="gambar"></div>
+          </center>
+          <div>
+          <div id="nama"></div>
+          <div id="alamat"></div>
+          <div id="no_identitas"></div>
+          <div id="bawah">
+            <button id="tombol-tutup" class="btn btn-primary">CLOSE</button>
+          </div>
+          </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div id="bg"></div>
+  <div id="modal-kotak2">
+    <div id="atas">
+      <center>
+      <div hidden="true" id="nama23"></div>
+      <button id="tombol-tutup2" class="btn btn-primary" aria-label="Close">Data Tidak Ditemukan</button>
+      </div>
+      </center>
     </div>
   </div>
     {{-- AKHIR MODAL --}}
