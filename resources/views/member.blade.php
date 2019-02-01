@@ -7,8 +7,8 @@
   .bulat{
 border-radius:100em;
 opacity:1;
-width:100px;
-height:100px;
+width:200px;
+height:200px;
 }
 </style>
  <section id="subscribe">
@@ -22,7 +22,7 @@ height:100px;
               <input type="text" class="form-control" placeholder="Masukkan No Identitas" name="nama" id="data">
             </div>
             <div class="col-auto">
-              <button class="btn btn-primary" id="submit" data-toggle="modal" data-target="#exampleModal">Cari</button>
+              <button class="btn btn-primary" id="submit">Cari</button>
             </div>
           </div>
       </div>
@@ -78,7 +78,6 @@ height:100px;
   }); 
   </script>
     {{-- AKHIR JAVASCRIPT --}}
-
     {{-- AWAL MODAL --}}
     <!-- Modal -->
   <div class="modal fade" id="exampleModal">
@@ -164,46 +163,126 @@ height:100px;
   </div>
     {{-- AKHIR MODAL --}}
 
-<section id="hotels" class="section-with-bg wow fadeInUp">
-  <h1 class="text-center">Kordinasi Wilayah</h1>
-  <br>
-  <br>
-      <div class="container">
-    
-
-        <div class="row">
-              <?php
-                  $korwil = \App\Korwil::all(); 
-               ?>
-               @foreach($korwil as $key)
-
-          <div class="col-lg-6 col-md-6">
-            
-              <div class="hotel-img">
-<h3><img src="{{ url('images/'.$key->logo)}}" class="bulat">&nbsp;&nbsp;{{$key->nama}}</h3>
-              </div>
-                <?php
-                                    $km = App\Korwilmember::where('idkorwil',$key->id)->get();
-                                 ?>
-                                 @foreach($km as $ka)
-                                <ol style="list-style-type: none;">
-                                  <li style="color: black;">
-                                    <br>  &nbsp;&nbsp;&nbsp;&nbsp;<i class="fas fa-arrow-right"></i> &nbsp;<img src="{{url('images/'.$ka->logo)}}" style="width: 50px;">&nbsp;{{$ka->nama}}&nbsp;({{$ka->kode}})    </li>
-                                    </ol>
-                                    @endforeach
-<br>
-
-          
-          </div>
-
-
-
-          @endforeach
-
+<section id="schedule" class="section-with-bg">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h2>Kordinasi Wilayah</h2>
         </div>
+        <?php
+          $i = 1;
+          $kiwil = App\Korwil::all();
+        ?>
+        @foreach($kiwil as $k)
+        <div style="margin-top: 2%;">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+                  <img src="{{url('images/'.$k->logo)}}" class="bulat">
+                  <br>
+                  <br>
+            <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">{{$k->nama}}</a>
+          </li>
+        </ul>
+        <h3 class="sub-heading">{!!$k->keterangan!!}</h3>
+        <?php
+            $km = App\Korwilmember::where('idkorwil',$k->id)->get();
+        ?>
+        <div class="tab-content row justify-content-center">
+
+          <!-- Schdule Day 1 -->
+          <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>Kode</time></div>
+              <div class="col-md-10">
+                <h4>Daftar Member Korwil</h4>
+              </div>
+            </div>
+            @foreach($km as $ka)
+            <div class="row schedule-item">
+              <div class="col-md-2"><time>{{$ka->kode}}</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="{{asset('u/img/speakers/1.jpg')}}" alt="Brenden Legros">
+                </div>
+                <h4>{{$ka->nama}}</h4>
+                <p>Registrasi : {{$ka->created_at}}</p>
+              </div>
+            </div>
+            @endforeach
+          </div>
+          <!-- End Schdule Day 1 -->
+        </div>
+        </div>
+        @endforeach
       </div>
+<style type="text/css">
+  body{
+  background: #ecf0f1;
+  font-family: sans-serif;
+  font-size: 11pt;
+}
+#modal-kotak{
+  height: auto;
+  width: auto;
+  position:relative;
+  z-index:1002;
+  display: none;
+  background: white;  
+  border-radius: 10px;
+}
+#modal-kotak2{
+  height: auto;
+  width: auto;
+  position:relative;
+  z-index:1002;
+  display: none;
+  background: white;  
+}
+#atas{
+  font-size: 15pt;
+  padding: 20px;  
+  height: 80%;
+}
+#bawah{
+  background: #fff;
+}
+ 
+#tombol-tutup{
+  margin-top: 10px;
+}
+#tombol-tutup2{
+  margin-top: 10px;
+  margin-left: 1%;
+}
+#tombol-tutup,#tombol{
+  height: 30px;
+  width: 100px;
+  color: #fff;
+  border: 0px;
+}
+#bg{
+  opacity:.80;
+  position: absolute;
+  display: none;
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index:1001;
+  opacity: 0.8;
+}
+#tombol{
+  background: #e74c3c;        
+}
 
-    </section>
+@media screen and (max-width: 960px) {
 
+.container{
+  margin-left: 0;
+} 
+}
+}
+</style>
     </section>
     @endsection
