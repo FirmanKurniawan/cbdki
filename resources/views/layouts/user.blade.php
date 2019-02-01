@@ -100,7 +100,7 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Buletin</h4>
+            <h4>Berlangganan</h4>
             <ul>
               <form action="{{url('admin/newsletter/save')}}" method="POST">
                 @csrf
