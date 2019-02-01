@@ -3,6 +3,13 @@
  <!--==========================
       Speakers Section
     ============================-->
+    <style type="text/css">
+      
+      .tengah{
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
     <section id="subscribe">
       <div class="container wow fadeInUp">
          <br>
@@ -37,10 +44,11 @@
 
          
          @endforeach
-
-        </div>
-       
+  <div class="tengah"> 
         {!! $s->render() !!}
+      </div>
+        </div>
+     
       </div>
 
     </section>
