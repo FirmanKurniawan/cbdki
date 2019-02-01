@@ -22,7 +22,7 @@ height:200px;
               <input type="text" class="form-control" placeholder="Masukkan No Identitas" name="nama" id="data">
             </div>
             <div class="col-auto">
-              <button class="btn btn-primary" id="submit">Cari</button>
+              <button class="btn btn-primary" id="submit" data-toggle="modal" data-target="#exampleModal">Cari</button>
             </div>
           </div>
       </div>
@@ -43,34 +43,22 @@ height:200px;
                url:"search2/" + id,
                success : function(results) {
                 if (results.no_identitas) {
-                  document.getElementById('nama').innerHTML =
+                    document.getElementById('nama').innerHTML =
                       '<label>Nama : </label>' +
                       '<input class="form-control" type="text" readonly style="background-color:#fff;" value="'+results.nama+'">';
-                  document.getElementById('alamat').innerHTML =
-                      '<label>Nama : </label>' +
+                    document.getElementById('alamat').innerHTML =
+                      '<label>Alamat : </label>' +
                       '<input class="form-control" type="text" readonly style="background-color:#fff;" value="'+results.alamat+'">';
-                  document.getElementById('no_identitas').innerHTML =
-                      '<label>Nama : </label>' +
+                    document.getElementById('no_identitas').innerHTML =
+                      '<label>No Identitas : </label>' +
                       '<input class="form-control" type="text" readonly style="background-color:#fff;" value="'+results.no_identitas+'">';
-                  document.getElementById('gambar').innerHTML =
-                      '<img src="images/'+results.foto+' "class="bulat2" style="width:30%;"/>';
-                    $(document).ready(function(){
-                     
-                              $('#modal-kotak , #bg').fadeIn("slow");
-                               
-                          $('#tombol-tutup').click(function(){
-                            $('#modal-kotak , #bg').fadeOut("slow");
-                          });
-                        });
+                    $('#no_identitas').val(results.no_identitas)
+                    document.getElementById('gambar').innerHTML =
+                      '<img src="images/'+results.foto+' "class="bulat2" style="margin-left:auto;width:30%;"/>';
                     }else{
-                      document.getElementById('nama23').innerHTML =
-                      '<label>Data Tidak Ditemukan</label>';
-                        $(document).ready(function(){
-                              $('#modal-kotak2 , #bg').fadeIn("slow");
-                          $('#tombol-tutup2').click(function(){
-                            $('#modal-kotak2 , #bg').fadeOut("slow");
-                          });
-                        });
+                      document.getElementById('no_identitas1').innerHTML =
+                      '<center><h1><i class="fas fa-times-circle fa-3x"></i></h1></center>'+
+                      '<h2>IDENTITAS TIDAK TERSEDIA</h2>';
                     }
                }
           }); 
@@ -78,6 +66,7 @@ height:200px;
   }); 
   </script>
     {{-- AKHIR JAVASCRIPT --}}
+
     {{-- AWAL MODAL --}}
     <!-- Modal -->
   <div class="modal fade" id="exampleModal">
@@ -95,9 +84,11 @@ height:200px;
         <div class="row">
           <div class="float-left">
             <br>
+           <div id="gambar" class="img-fluid"></div>
            </div>
            <div class="float-right" style="margin-left: 30px;">
             {{--  --}}
+            <div class="row" id="nama">
             <div class="col">
             </div>
             <div class="col">
@@ -106,6 +97,7 @@ height:200px;
           {{--  --}}
         <br>
         {{--  --}}
+            <div class="row" id="alamat">
             <div class="col">
             </div>
             <div class="col">
@@ -114,6 +106,7 @@ height:200px;
           {{--  --}}
         <br>
         {{--  --}}
+            <div class="row" id="no_identitas">
             <div class="col">
             </div>
             <div class="col">
@@ -127,38 +120,6 @@ height:200px;
     </div>
         </div>
       </div>
-    </div>
-  </div>
-    {{-- AKHIR MODAL --}}
-    {{-- AWAL MODAL --}}
-  <div class="container" id="modal-kotak">
-    <div>
-     
-      <div class="modal-body">
-        <div class="row">
-          <center>
-          <div id="gambar"></div>
-          </center>
-          <div>
-          <div id="nama"></div>
-          <div id="alamat"></div>
-          <div id="no_identitas"></div>
-          <div id="bawah">
-            <button id="tombol-tutup" class="btn btn-primary">CLOSE</button>
-          </div>
-          </div>
-          </div>
-      </div>
-    </div>
-  </div>
-  <div id="bg"></div>
-  <div id="modal-kotak2">
-    <div id="atas">
-      <center>
-      <div hidden="true" id="nama23"></div>
-      <button id="tombol-tutup2" class="btn btn-primary" aria-label="Close">Data Tidak Ditemukan</button>
-      </div>
-      </center>
     </div>
   </div>
     {{-- AKHIR MODAL --}}
@@ -214,75 +175,6 @@ height:200px;
         </div>
         @endforeach
       </div>
-<style type="text/css">
-  body{
-  background: #ecf0f1;
-  font-family: sans-serif;
-  font-size: 11pt;
-}
-#modal-kotak{
-  height: auto;
-  width: auto;
-  position:relative;
-  z-index:1002;
-  display: none;
-  background: white;  
-  border-radius: 10px;
-}
-#modal-kotak2{
-  height: auto;
-  width: auto;
-  position:relative;
-  z-index:1002;
-  display: none;
-  background: white;  
-}
-#atas{
-  font-size: 15pt;
-  padding: 20px;  
-  height: 80%;
-}
-#bawah{
-  background: #fff;
-}
- 
-#tombol-tutup{
-  margin-top: 10px;
-}
-#tombol-tutup2{
-  margin-top: 10px;
-  margin-left: 1%;
-}
-#tombol-tutup,#tombol{
-  height: 30px;
-  width: 100px;
-  color: #fff;
-  border: 0px;
-}
-#bg{
-  opacity:.80;
-  position: absolute;
-  display: none;
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  z-index:1001;
-  opacity: 0.8;
-}
-#tombol{
-  background: #e74c3c;        
-}
 
-@media screen and (max-width: 960px) {
-
-.container{
-  margin-left: 0;
-} 
-}
-}
-</style>
     </section>
     @endsection
