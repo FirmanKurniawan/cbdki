@@ -4,7 +4,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <style type="text/css">
-  .bulat{
+	.bulat{
 border-radius:100em;
 opacity:1;
 width:200px;
@@ -30,6 +30,7 @@ height:200px;
 
     {{-- AWAL JAVASCRIPT --}}
     <script type="text/javascript">
+<<<<<<< HEAD
      $(document).ready(function() {
       $('#submit').click(function() {
           $.ajaxSetup({
@@ -65,10 +66,48 @@ height:200px;
       });
   }); 
   </script>
+=======
+	   $(document).ready(function() {
+	    $('#submit').click(function() {
+	        $.ajaxSetup({
+	            headers: {
+	                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+	            }
+	        });
+	        var id = document.getElementById('data').value;
+	        $.ajax({
+	             type:"GET",
+	             url:"search2/" + id,
+	             success : function(results) {
+	              if (results.no_identitas) {
+	                  document.getElementById('nama').innerHTML =
+	                    '<label>Nama : </label>' +
+	                    '<input class="form-control" type="text" readonly style="background-color:#fff;" value="'+results.nama+'">';
+	                  document.getElementById('alamat').innerHTML =
+	                    '<label>Alamat : </label>' +
+	                    '<input class="form-control" type="text" readonly style="background-color:#fff;" value="'+results.alamat+'">';
+	                  document.getElementById('no_identitas').innerHTML =
+	                    '<label>No Identitas : </label>' +
+	                    '<input class="form-control" type="text" readonly style="background-color:#fff;" value="'+results.no_identitas+'">';
+	                  $('#no_identitas').val(results.no_identitas)
+	                  document.getElementById('gambar').innerHTML =
+	                    '<img src="images/'+results.foto+' "class="bulat2" style="margin-left:auto;width:30%;"/>';
+	                  }else{
+	                    document.getElementById('no_identitas1').innerHTML =
+	                    '<center><h1><i class="fas fa-times-circle fa-3x"></i></h1></center>'+
+	                    '<h2>IDENTITAS TIDAK TERSEDIA</h2>';
+	                  }
+	             }
+	        }); 
+	    });
+	}); 
+	</script>
+>>>>>>> 6182c3459be5a6af90a3100677002258f6dc571f
     {{-- AKHIR JAVASCRIPT --}}
 
     {{-- AWAL MODAL --}}
     <!-- Modal -->
+<<<<<<< HEAD
   <div class="modal fade" id="exampleModal">
     <div>
       <div class="modal-content" style="width: 100%;height: 100%;margin-left: auto;margin-right: auto;">
@@ -89,14 +128,41 @@ height:200px;
            <div class="float-right" style="margin-left: 30px;">
             {{--  --}}
             <div class="row" id="nama">
+=======
+	<div class="modal fade" id="exampleModal">
+	  <div>
+	    <div class="modal-content" style="width: 100%;height: 100%;margin-left: auto;margin-right: auto;">
+	      <div class="modal-header">
+	        <h5 class="modal-title" id="exampleModalLabel">Cari Anggota</h5>
+	        <form action="{{url('/member')}}">
+	        <button type="submit" class="close" aria-label="Close">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	        </form>
+	      </div>
+	      <div class="modal-body">
+	      <div class="row">
+	        <div class="float-left">
+	          <br>
+	         <div id="gambar" class="img-fluid"></div>
+	         </div>
+	         <div class="float-right" style="margin-left: 30px;">
+            {{--  --}}
+	          <div class="row" id="nama">
+>>>>>>> 6182c3459be5a6af90a3100677002258f6dc571f
             <div class="col">
             </div>
             <div class="col">
             </div>
           </div>
           {{--  --}}
+<<<<<<< HEAD
         <br>
         {{--  --}}
+=======
+	      <br>
+	      {{--  --}}
+>>>>>>> 6182c3459be5a6af90a3100677002258f6dc571f
             <div class="row" id="alamat">
             <div class="col">
             </div>
@@ -104,8 +170,13 @@ height:200px;
             </div>
           </div>
           {{--  --}}
+<<<<<<< HEAD
         <br>
         {{--  --}}
+=======
+	      <br>
+	      {{--  --}}
+>>>>>>> 6182c3459be5a6af90a3100677002258f6dc571f
             <div class="row" id="no_identitas">
             <div class="col">
             </div>
@@ -113,15 +184,24 @@ height:200px;
             </div>
           </div>
           {{--  --}}
-        <div id="no_identitas1" style="margin-left: auto;margin-right: auto;"></div>
-            <!-- {{-- <img src="{{url('images/'.$foto)}}"> --}} -->
+	      <div id="no_identitas1" style="margin-left: auto;margin-right: auto;"></div>
+	          <!-- {{-- <img src="{{url('images/'.$foto)}}"> --}} -->
 
+<<<<<<< HEAD
       </div>
     </div>
         </div>
       </div>
     </div>
   </div>
+=======
+			</div>
+		</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+>>>>>>> 6182c3459be5a6af90a3100677002258f6dc571f
     {{-- AKHIR MODAL --}}
 
 <section id="schedule" class="section-with-bg">
@@ -130,8 +210,8 @@ height:200px;
           <h2>Kordinasi Wilayah</h2>
         </div>
         <?php
-          $i = 1;
-          $kiwil = App\Korwil::all();
+        	$i = 1;
+        	$kiwil = App\Korwil::all();
         ?>
         @foreach($kiwil as $k)
         <div style="margin-top: 2%;">
