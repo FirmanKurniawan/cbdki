@@ -57,11 +57,11 @@
 
       <nav id="nav-menu-container">
         <ul class="nav-menu">
-          <li ><a href="{{url('/')}}">Home</a></li>
-          <li><a href="{{url('member')}}">Member</a></li>
-          <li><a href="{{url('merchandise')}}">Merchandise</a></li>
+          <li ><a href="{{url('/')}}">Beranda</a></li>
+          <li><a href="{{url('member')}}">Anggota</a></li>
+          <li><a href="{{url('merchandise')}}">Sovenir</a></li>
           <li><a href="{{url('berita')}}">Berita</a></li>
-          <li><a href="{{url('contact')}}">Contact</a></li>
+          <li><a href="{{url('contact')}}">Kontak</a></li>
         </ul>
       </nav><!-- #nav-menu-container -->
     </div>
@@ -90,7 +90,7 @@
             <?php
                 $data = \App\Footer::where('id',1)->first();
                 ?>
-                <h4>About Us</h4>
+                <h4>Tentang Kami</h4>
                 <p>
                   <h5 style="color: white;">{!! $data->pengantar1 !!}</h5>
                   <p style="color: white;">{!! $data->pengantar2 !!}
@@ -100,28 +100,19 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
+            <h4>Berlangganan</h4>
             <ul>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Home</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">About us</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
+              <form action="{{url('admin/newsletter/save')}}" method="POST">
+                @csrf
+              <input type="email" class="form-control" name="email" placeholder="Email" style="border-radius: 50px; border : 0;">
+              <br>
+              <button type="submit" class="btn" style="background-color: #E0072F; color: #fff; border-radius: 50px;">Kirim</button>
+              </form>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h4>Contact Us</h4>
+            <h4>Kontak Kami</h4>
             <?php  
             $profile = \App\Profile::all()->where('id', 1);
             ?>

@@ -1,9 +1,13 @@
 @extends('layouts.user')
 @section('content')
+
   <section id="subscribe">
       <div class="container wow fadeInUp">
+         <br>
+          <br>
+           <br>
         <div class="section-header">
-          <h2>Detail Berita</h2>
+          
         </div>
 
 

@@ -5,8 +5,12 @@
 		<!--==========================
       Hotels Section
     ============================-->
+   
     <section id="subscribe">
       <div class="container wow fadeInUp">
+         <br>
+          <br>
+           <br>
         <div class="section-header">
           <h2>Merchandise Kami</h2>
         </div>

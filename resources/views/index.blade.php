@@ -6,7 +6,7 @@
   $q = \App\Profile::where('id', 1)->first();
 
 ?>
-<section id="intro">
+<section id="intro"><img src="{{asset('images/'.$q->gambar_depan)}}" id="intro" style="background-size: cover;">
     <div class="intro-container wow fadeIn">
       <h1 class="mb-4 pb-0">{!!$q->pengantar1!!}</h1>
       <p class="mb-4 pb-0">
@@ -15,7 +15,7 @@
       </p>
       <a href="{{$q->linkyt}}" class="venobox play-btn mb-4" data-vbtype="video"
         data-autoplay="true"></a>
-      <a href="#about" class="about-btn scrollto">About</a>
+      <a href="#about" class="about-btn scrollto">Visi Misi</a>
     </div>
   </section>
 
@@ -25,23 +25,46 @@
       About Section
     ============================-->
     <section id="about">
+
+    
 <?php
-  $q = \App\About::where('id', 1)->first();
+  $q = \App\Visimisi::where('id', 1)->first();
 
 ?>  
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6">
-            <h2>About Us</h2>
-            <p>{!!$q->pengantar1!!}</p>
+        <div class="row" style="margin-left: 10%;">
+          <div class="col-lg-4">
+            <h3>Riwayat</h3>
+              <?php 
+                  $history = \App\History::all();
+               ?>
+               @foreach($history as $v)
+              <p>
+                {!!$v->history!!}
+              </p>
+              @endforeach
           </div>
-          <div class="col-lg-3">
-            <h1 hidden="true">Where</h1>
-            <p>{!!$q->pengantar2!!}</p>
+          <div class="col-lg-4">
+            <h3>Visi</h3>
+              <?php 
+                  $visi = \App\Visimisi::all()->where('tipe',1);
+               ?>
+               @foreach($visi as $v)
+              <p>
+                {!!$v->isi!!}
+              </p>
+              @endforeach
           </div>
-          <div class="col-lg-3">
-            <h1 hidden="true">When</h1>
-            <p>{!!$q->pengantar3!!}</p>
+          <div class="col-lg-4">
+            <h3>Misi</h3>
+              <?php 
+                  $misi = \App\Visimisi::all()->where('tipe',2);
+               ?>
+               @foreach($misi as $v)
+              <p>
+                {!!$v->isi!!}
+              </p>
+              @endforeach
           </div>
         </div>
       </div>
@@ -66,26 +89,6 @@
          @foreach ($gallery as $n)
         <a href="{{ asset('images/'.$n->gambar) }}" class="venobox" data-gall="gallery-carousel"><img src="{{ asset('images/'.$n->gambar) }}" alt=""></a>
         @endforeach
-      </div>
-    </section>
-    <section id="subscribe">
-      <div class="container wow fadeInUp">
-        <div class="section-header">
-          <h2>Newsletter</h2>
-          <p>You can trust us. we only send  offers, not a single spam.</p>
-        </div>
-        <form action="{{url('/admin/newsletter/save')}}" method="POST" action="#">
-          @csrf
-          <div class="form-row justify-content-center">
-            <div class="col-auto">
-              <input type="email" name="email" class="form-control" placeholder="Enter your Email">
-            </div>
-            <div class="col-auto">
-              <button type="submit">Subscribe</button>
-            </div>
-          </div>
-        </form>
-
       </div>
     </section>
       <!-- End latest-blog Area -->   
