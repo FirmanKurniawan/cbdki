@@ -200,6 +200,8 @@ or at least read this note: http://i.imgur.com/7C0ws9e.gif
     border: 8px solid rgba(255, 255, 255, 0.4);
 }
 img.figlio{
+    width: 818px;
+    height: 616px;
     -webkit-user-select: none;
 -khtml-user-select: none;
 -moz-user-select: none;
