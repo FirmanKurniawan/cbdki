@@ -100,7 +100,7 @@ height:200px;
     </div>
   </div>
   <div id="bg"></div>
-  <div id="modal-kotak2">
+  <div class="container" id="modal-kotak2">
     <div id="atas">
       <center>
       <div hidden="true" id="nama23"></div>
@@ -160,18 +160,19 @@ height:200px;
 }
 #modal-kotak{
   position:sticky;
+  width: 50%;
   z-index:1002;
   display: none;
   background: white;  
   border-radius: 10px;
 }
 #modal-kotak2{
-  height: auto;
-  width: auto;
-  position:relative;
+  position:sticky;
+  width: 70%;
   z-index:1002;
   display: none;
-  background: white;  
+  background: white;
+  border-radius: 10px;
 }
 #atas{
   font-size: 15pt;
